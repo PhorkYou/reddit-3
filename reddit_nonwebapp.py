@@ -23,8 +23,8 @@ def login():
 	f = 'key.txt'
 	cur_time = int(time.time())
 	#Request tokens are good for 3600 seconds, and stored in file. 
-	#If the file exists, and is older than 3600 seconds
-	#we will want to obtain a new token.
+	#If the file exists, and is less than 3600 seconds
+	#we will want to use the existing token
 	if os.path.exists(f):
 		print "Using existing token"
 		#After determining existence, get modified time of file, and see if it's expired, using epoch.
